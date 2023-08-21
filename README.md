@@ -51,17 +51,3 @@ pnpm mortal create -- --name=project
 # ['create', 'c'] => 自定义子命令
 # ['name', 'n'] => 命令行参数
 ```
-
-## 文件目录结构
-
-|-- package.json
-|-- pnpm-lock.yaml
-|-- pnpm-workspace.yaml
-|-- examples
-| -- |-- app
-| -- |-- package.json
-|-- packages
-| -- |-- mortal-cli
-| -- | -- |-- package.json
-| -- | -- |-- bin
-| -- | -- |-- index.js
