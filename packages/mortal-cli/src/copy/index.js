@@ -3,8 +3,6 @@ import path from 'path'
 import { inquirerPrompt, install } from './inquirer'
 import { copyDir, copyFile, copyTemplate, checkMkdirExists } from './copy'
 
-
-
 const parseAnswer = async (argv) => {
   inquirerPrompt(argv).then(answers => {
     const { name, type } = answers;

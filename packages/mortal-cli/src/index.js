@@ -6,14 +6,6 @@ yargs(hideBin(process.argv))
   .command(
     ['copy'],
     'Copy a new template from local file',
-    (yargs) => {
-      return yargs.option('name', {
-        alias: 'n',
-        demand: false,
-        describe: '模板名称',
-        type: 'string'
-      })
-    },
     (argv) => {
       import('./copy/index.js').then(({ default: parseAnswer }) => {
         parseAnswer(argv);
@@ -26,7 +18,7 @@ yargs(hideBin(process.argv))
     (yargs) => {
       return yargs.option('name', {
         alias: 'n',
-        demand: true,
+        demand: false,
         describe: 'Template name',
         type: 'string'
       }).option('force', {

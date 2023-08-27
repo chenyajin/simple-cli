@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
 
-// 标记：表单
+// 标记：嵌套表单
 const App = () => {
   const onFinish = (values) => {
     console.log('Success:', values);

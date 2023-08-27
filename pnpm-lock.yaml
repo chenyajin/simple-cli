@@ -6,15 +6,9 @@ importers:
 
   examples/app:
     dependencies:
-      element-plus:
-        specifier: ^2.3.9
-        version: 2.3.9(vue@3.3.4)
       mortal-cli:
         specifier: workspace:*
         version: link:../../packages/mortal-cli
-      vue:
-        specifier: ^3.3.4
-        version: 3.3.4
 
   packages/mortal-cli:
     dependencies:

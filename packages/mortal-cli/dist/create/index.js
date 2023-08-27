@@ -9,13 +9,13 @@ var _fsExtra = _interopRequireDefault(require("fs-extra"));
 var _inquirer = _interopRequireDefault(require("inquirer"));
 var _creator = _interopRequireDefault(require("./creator.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-// import getPromptFeatures from './get-prompt-features.js';
 /**
- * 执行create时的处理
+ * 初始化
  * @param {any} name // 创建的项目名
- * @param {any} options // 配置项 必须是上面option配置的选项之一，否则就报错  这里取的起始就是cmd里面的options的各个option的long属性
+ * @param {any} options // 配置项
  */
-const create = async (projectName, options) => {
+const create = async (name, options) => {
+  let projectName = !name ? await createProjectName() : name;
   // 先判断是否重名，如果重名，若选择了force则直接覆盖之前的目录，否则报错
   // 获取工作目录
   const cwd = process.cwd();
@@ -51,10 +51,34 @@ const create = async (projectName, options) => {
       }
     }
   }
-  // const promptFeatures = getPromptFeatures();
   // 创建项目
   const creator = new _creator.default(projectName, targetDir);
   creator.create();
+};
+
+/**
+ * 获取用户输入的项目名称
+ * @returns {string} projectName
+ */
+const createProjectName = async () => {
+  return new Promise((resolve, reject) => {
+    _inquirer.default.prompt([{
+      type: 'input',
+      name: 'name',
+      message: 'Project name',
+      validate: function (val) {
+        if (!/^[a-zA-Z]+$/.test(val)) {
+          return "模板名称只能含有英文";
+        }
+        // if (!/^[A-Z]/.test(val)) {
+        //   return "模板名称首字母必须大写"
+        // }
+        return true;
+      }
+    }]).then(options => {
+      resolve(options.name);
+    });
+  });
 };
 var _default = create;
 exports.default = _default;

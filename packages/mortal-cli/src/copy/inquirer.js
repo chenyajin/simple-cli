@@ -11,7 +11,7 @@ function inquirerPrompt (argv) {
       {
         type: 'input',
         name: 'name',
-        message: '模板名称',
+        message: 'Project name',
         default: name,
         validate: function (val) {
           if (!/^[a-zA-Z]+$/.test(val)) {
@@ -26,19 +26,19 @@ function inquirerPrompt (argv) {
       {
         type: 'list',
         name: 'type',
-        message: '模板类型',
-        choices: ['表单', '动态表单', '嵌套表单'],
+        message: 'Choose Template type',
+        choices: ['form', 'dynamicForm', 'nestedForm'],
         filter: function (value) {
           return {
-            '表单': "form",
-            '动态表单': "dynamicForm",
-            '嵌套表单': "nestedForm",
+            'form': "form",
+            'dynamicForm': "dynamicForm",
+            'nestedForm': "nestedForm",
           }[value];
         },
       },
       {
         type: 'list',
-        message: '使用什么框架开发',
+        message: 'Choose Frame type',
         choices: ['vue', 'react'],
         name: 'frame',
       }
@@ -48,7 +48,7 @@ function inquirerPrompt (argv) {
         inquirer.prompt([
           {
             type: 'list',
-            message: '使用什么UI组件库开发',
+            message: 'Choose UI Library',
             choices: [
               'Ant Design',
             ],
@@ -68,7 +68,7 @@ function inquirerPrompt (argv) {
         inquirer.prompt([
           {
             type: 'list',
-            message: '使用什么UI组件库开发',
+            message: 'Choose UI Library',
             choices: ['Element'],
             name: 'library',
           }
