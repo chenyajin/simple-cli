@@ -1,19 +1,60 @@
 |-- Documents
+    |-- .gitignore
     |-- README.md
+    |-- directoryList.md
     |-- package.json
     |-- pnpm-lock.yaml
     |-- pnpm-workspace.yaml
     |-- examples
     |   |-- app
-    |       |-- package.json
+    |   |   |-- package.json
+    |   |-- test
+    |       |-- .gitkeep
     |-- packages
         |-- mortal-cli
-            |-- package.json
-            |-- bin
-                |-- copy.js
-                |-- index.js
-                |-- inquirer.js
-                |-- template
-                    |-- form
-                        |-- index.js
-                        |-- index.tpl
+        |   |-- .eslintignore
+        |   |-- .eslintrc
+        |   |-- babel.config.js
+        |   |-- jsconfig.json
+        |   |-- package.json
+        |   |-- bin
+        |   |   |-- index.js
+        |   |-- dist
+        |   |   |-- index.js
+        |   |   |-- copy
+        |   |   |   |-- copy.js
+        |   |   |   |-- index.js
+        |   |   |   |-- inquirer.js
+        |   |   |   |-- template
+        |   |   |       |-- form
+        |   |   |           |-- index.js
+        |   |   |           |-- index.tpl
+        |   |   |-- create
+        |   |   |   |-- create.js
+        |   |   |   |-- creator.js
+        |   |   |   |-- index.js
+        |   |   |   |-- prompt-api.js
+        |   |   |   |-- request.js
+        |   |   |   |-- utils.js
+        |   |   |-- help
+        |   |       |-- index.js
+        |   |-- src
+        |       |-- index.js
+        |       |-- copy
+        |       |   |-- copy.js
+        |       |   |-- index.js
+        |       |   |-- inquirer.js
+        |       |   |-- template
+        |       |       |-- form
+        |       |           |-- index.js
+        |       |           |-- index.tpl
+        |       |-- create
+        |       |   |-- creator.js
+        |       |   |-- index.js
+        |       |   |-- prompt-api.js
+        |       |   |-- request.js
+        |       |   |-- utils.js
+        |       |-- help
+        |           |-- index.js
+        |-- test
+            |-- .gitkeep
