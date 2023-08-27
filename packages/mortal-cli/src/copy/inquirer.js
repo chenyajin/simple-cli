@@ -1,7 +1,7 @@
-const inquirer = require('inquirer');
-const { exec } = require('child_process');
-const path = require('path');
-const ora = require("ora");
+import inquirer from 'inquirer';
+import { exec } from 'child_process';
+import path from 'path';
+import ora from "ora";
 
 // 交互式询问列表
 function inquirerPrompt (argv) {
@@ -39,7 +39,7 @@ function inquirerPrompt (argv) {
       {
         type: 'list',
         message: '使用什么框架开发',
-        choices: ['react', 'vue'],
+        choices: ['vue', 'react'],
         name: 'frame',
       }
     ]).then(answers => {
@@ -121,5 +121,5 @@ function install (cmdPath, options) {
     )
   })
 }
-exports.inquirerPrompt = inquirerPrompt;
-exports.install = install;
+
+export { inquirerPrompt, install }
