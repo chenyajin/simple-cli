@@ -1,6 +1,6 @@
-# simple-scaffold
+# simple-cli
 
-一个最简单的脚手架入门实例
+一个最简单的适合入门的脚手架实例
 入门详细教程：[juejin.cn](https://juejin.cn/post/7260144602471776311#heading-9)
 
 ## 环境
@@ -30,10 +30,10 @@
 ```shell
 
 # 克隆项目
-git clone https://github.com/chenyajin/simple-scaffold.git
+git clone https://github.com/chenyajin/simple-cli.git
 
-# 进入项目
-cd simple-scaffold
+# 进入项目根目录
+cd simple-cli
 
 # 安装依赖
 pnpm i
@@ -42,16 +42,17 @@ pnpm i
 cd examples/app
 
 # 本地文件拷贝shell
-pnpm mortal copy --name=project
+pnpm cli copy
 
 # git仓库模版文件拷贝shell
-pnpm mortal create --name=project
+pnpm cli create
 
 # 命令行解释说明
-pnpm mortal use
+pnpm cli use
 
+# 最终的结果文件显示在当前操作目录下
 ## 命令解释
-# mortal => mortal-cli脚手架中自定义脚本命令
+# cli => simple-cli脚手架中自定义脚本命令
 # ['create', 'c', 'copy', 'use'] => 自定义子命令
 # ['name', 'n'] => 命令行参数
 ```

@@ -1,18 +1,18 @@
 {
-  "name": "mortal-cli",
+  "name": "simple-cli",
   "version": "1.0.0",
-  "description": "一个最简单的脚手架",
+  "description": "一个适合入门的脚手架",
   "main": "index.js",
   "scripts": {
-    "mortal": "node ./bin/index.js",
+    "cli": "node ./bin/index.js",
     "build": "babel src --out-dir dist",
     "build:watch": "babel --watch src --out-dir dist"
   },
   "bin": {
-    "mortal": "./bin/index.js"
+    "cli": "./bin/index.js"
   },
   "keywords": [
-    "mortal-cli"
+    "simple-cli"
   ],
   "author": "chenyajin",
   "license": "ISC",

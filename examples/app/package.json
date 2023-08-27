@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "mortal": "mortal",
     "cli": "cli"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mortal-cli": "workspace:*"
+    "simple-cli": "workspace:*"
   }
 }

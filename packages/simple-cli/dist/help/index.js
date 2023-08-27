@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 const help = argv => {
   console.log(`
-  mortal-cli has two command line tools:
+  simple-cli has two command line tools:
 
     1) copy        -- used for Coping template from local file
     2) create     -- used for Creating frame template from Git repo

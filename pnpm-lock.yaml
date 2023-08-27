@@ -6,11 +6,17 @@ importers:
 
   examples/app:
     dependencies:
-      mortal-cli:
+      element-plus:
+        specifier: ^2.3.9
+        version: 2.3.9(vue@3.3.4)
+      simple-cli:
         specifier: workspace:*
-        version: link:../../packages/mortal-cli
+        version: link:../../packages/simple-cli
+      vue:
+        specifier: ^3.3.4
+        version: 3.3.4
 
-  packages/mortal-cli:
+  packages/simple-cli:
     dependencies:
       axios:
         specifier: ^1.4.0
@@ -112,10 +118,10 @@ packages:
       '@babel/helper-compilation-targets': 7.22.10
       '@babel/helper-module-transforms': 7.22.9(@babel/core@7.20.5)
       '@babel/helpers': 7.22.11
-      '@babel/parser': 7.22.10
+      '@babel/parser': 7.22.11
       '@babel/template': 7.22.5
       '@babel/traverse': 7.22.11
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
       convert-source-map: 1.9.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
@@ -129,7 +135,7 @@ packages:
     resolution: {integrity: sha512-79KIf7YiWjjdZ81JnLujDRApWtl7BxTqWD88+FFdQEIOG8LJ0etDOM7CXuIgGJa55sGOwZVwuEsaLEm0PJ5/+A==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.19
       jsesc: 2.5.2
@@ -351,14 +357,6 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       chalk: 2.4.2
       js-tokens: 4.0.0
-    dev: true
-
-  /@babel/parser@7.22.10:
-    resolution: {integrity: sha512-lNbdGsQb9ekfsnjFGhEiF4hfFqGgfOP3H3d27re3n+CGhNuTSUEQdfWk556sTLNTloczcdM5TYF2LhzmDQKyvQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      '@babel/types': 7.22.10
     dev: true
 
   /@babel/parser@7.22.11:
@@ -1138,7 +1136,7 @@ packages:
       '@babel/plugin-transform-unicode-escapes': 7.22.10(@babel/core@7.20.5)
       '@babel/plugin-transform-unicode-regex': 7.22.5(@babel/core@7.20.5)
       '@babel/preset-modules': 0.1.6(@babel/core@7.20.5)
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
       babel-plugin-polyfill-corejs2: 0.3.3(@babel/core@7.20.5)
       babel-plugin-polyfill-corejs3: 0.6.0(@babel/core@7.20.5)
       babel-plugin-polyfill-regenerator: 0.4.1(@babel/core@7.20.5)
@@ -1177,7 +1175,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.22.10
-      '@babel/parser': 7.22.10
+      '@babel/parser': 7.22.11
       '@babel/types': 7.22.11
     dev: true
 
@@ -1197,15 +1195,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/types@7.22.10:
-    resolution: {integrity: sha512-obaoigiLrlDZ7TUQln/8m4mSqIW2QFeOrCQc9r+xsaHGNoplVNYlRVpsfE8Vj35GEm2ZH4ZhrNYogs/3fj85kg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.5
-      to-fast-properties: 2.0.0
     dev: true
 
   /@babel/types@7.22.11:

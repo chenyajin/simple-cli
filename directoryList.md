@@ -11,8 +11,7 @@
     |   |-- test
     |       |-- .gitkeep
     |-- packages
-        |-- mortal-cli
-        |   |-- .eslintignore
+        |-- simple-cli
         |   |-- .eslintrc
         |   |-- babel.config.js
         |   |-- jsconfig.json
@@ -26,8 +25,12 @@
         |   |   |   |-- index.js
         |   |   |   |-- inquirer.js
         |   |   |   |-- template
+        |   |   |       |-- dynamicForm
+        |   |   |       |   |-- index.tpl
         |   |   |       |-- form
-        |   |   |           |-- index.js
+        |   |   |       |   |-- index.js
+        |   |   |       |   |-- index.tpl
+        |   |   |       |-- nestedForm
         |   |   |           |-- index.tpl
         |   |   |-- create
         |   |   |   |-- create.js
@@ -45,8 +48,12 @@
         |       |   |-- index.js
         |       |   |-- inquirer.js
         |       |   |-- template
+        |       |       |-- dynamicForm
+        |       |       |   |-- index.tpl
         |       |       |-- form
-        |       |           |-- index.js
+        |       |       |   |-- index.js
+        |       |       |   |-- index.tpl
+        |       |       |-- nestedForm
         |       |           |-- index.tpl
         |       |-- create
         |       |   |-- creator.js
