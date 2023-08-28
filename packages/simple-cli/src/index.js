@@ -7,8 +7,8 @@ yargs(hideBin(process.argv))
     ['copy'],
     'Copy a new template from local file',
     (argv) => {
-      import('./copy/index.js').then(({ default: parseAnswer }) => {
-        parseAnswer(argv);
+      import('./copy/index.js').then(({ default: parseOptions }) => {
+        parseOptions(argv);
       });
     }
   )

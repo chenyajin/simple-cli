@@ -1,22 +1,34 @@
 
 import path from 'path'
-import { inquirerPrompt, install } from './inquirer'
+import fs from 'fs-extra';
+import { inquirerPrompt, install, isOverride } from './inquirer'
 import { copyDir, copyFile, copyTemplate, checkMkdirExists } from './copy'
 
-const parseAnswer = async (argv) => {
+const parseOptions = async (argv) => {
   inquirerPrompt(argv).then(answers => {
     const { name, type } = answers;
-    const isMkdirExists = checkMkdirExists(
-      path.resolve(process.cwd(), `./${name}`)
-    );
+    const targetDir = path.resolve(process.cwd(), `./${name}`)
+    const isMkdirExists = checkMkdirExists(targetDir);
     if (isMkdirExists) {
-      console.log(`${name}文件夹已经存在`)
+      isOverride(name, targetDir).then(async action => {
+        if (!action) {
+          return;
+        } else {
+          console.log('\r\noverwriting...');
+          await fs.remove(targetDir);
+          console.log('overwrite done');
+          copyDir(
+            path.resolve(__dirname, `./template/${type}`),
+            path.resolve(process.cwd(), `./${name}`)
+          )
+        }
+      })
     } else {
       // 1、拷贝文件夹
-      // copyDir(
-      //   path.resolve(__dirname, `./template/${type}`),
-      //   path.resolve(process.cwd(), `./${name}`)
-      // )
+      copyDir(
+        path.resolve(__dirname, `./template/${type}`),
+        path.resolve(process.cwd(), `./${name}`)
+      )
       // // 2、拷贝文件
       // copyFile(
       //   path.resolve(__dirname, `./template/${type}/index.js`),
@@ -26,16 +38,16 @@ const parseAnswer = async (argv) => {
       //   }
       // )
       // 3、拷贝模版
-      copyTemplate(
-        path.resolve(__dirname, `./template/${type}/index.tpl`),
-        path.resolve(process.cwd(), `./${name}/index.js`),
-        {
-          name,
-        }
-      )
+      // copyTemplate(
+      //   path.resolve(__dirname, `./template/${type}/index.tpl`),
+      //   path.resolve(process.cwd(), `./${name}/index.js`),
+      //   {
+      //     name,
+      //   }
+      // )
       install(process.cwd(), answers);
     }
   })
 }
 
-export default parseAnswer
+export default parseOptions

@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.inquirerPrompt = inquirerPrompt;
 exports.install = install;
+exports.isOverride = void 0;
 var _inquirer = _interopRequireDefault(require("inquirer"));
 var _child_process = require("child_process");
 var _path = _interopRequireDefault(require("path"));
@@ -15,7 +16,32 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+const isOverride = async (name, targetDir) => {
+  return new Promise((resolve, reject) => {
+    _inquirer.default.prompt([{
+      name: 'action',
+      type: 'list',
+      // 提示信息
+      message: `${name} is existed, do you want to overwrite this directory`,
+      // 选项
+      choices: [{
+        name: 'overwrite',
+        value: true
+      }, {
+        name: 'cancel',
+        value: false
+      }]
+    }]).then(options => {
+      const {
+        action
+      } = options;
+      resolve(action);
+    });
+  });
+};
+
 // 交互式询问列表
+exports.isOverride = isOverride;
 function inquirerPrompt(argv) {
   const {
     name

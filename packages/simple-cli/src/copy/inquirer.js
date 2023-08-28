@@ -3,6 +3,29 @@ import { exec } from 'child_process';
 import path from 'path';
 import ora from "ora";
 
+
+const isOverride = async (name, targetDir) => {
+  return new Promise((resolve, reject) => {
+    inquirer.prompt([
+      {
+        name: 'action',
+        type: 'list',
+        // 提示信息
+        message: `${name} is existed, do you want to overwrite this directory`,
+        // 选项
+        choices: [
+          { name: 'overwrite', value: true },
+          { name: 'cancel', value: false },
+        ],
+      },
+    ]).then(options => {
+      const { action } = options
+      resolve(action)
+    })
+  })
+}
+
+
 // 交互式询问列表
 function inquirerPrompt (argv) {
   const { name } = argv;
@@ -122,4 +145,4 @@ function install (cmdPath, options) {
   })
 }
 
-export { inquirerPrompt, install }
+export { inquirerPrompt, install, isOverride }

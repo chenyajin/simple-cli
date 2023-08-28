@@ -6,15 +6,9 @@ importers:
 
   examples/app:
     dependencies:
-      element-plus:
-        specifier: ^2.3.9
-        version: 2.3.9(vue@3.3.4)
       simple-cli:
         specifier: workspace:*
         version: link:../../packages/simple-cli
-      vue:
-        specifier: ^3.3.4
-        version: 3.3.4
 
   packages/simple-cli:
     dependencies:
