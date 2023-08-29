@@ -1,7 +1,7 @@
 # simple-cli
 
 一个最简单的适合入门的脚手架实例
-入门详细教程：[juejin.cn](https://juejin.cn/post/7260144602471776311#heading-9)
+入门详细教程：[juejin.cn](https://juejin.cn/post/7272213962058301451)
 
 ## 环境
 
@@ -38,7 +38,12 @@ cd simple-cli
 # 安装依赖
 pnpm i
 
-# 进去测试包
+# 打包脚手架
+cd packages/simple-cli
+npm run build:watch
+cd ../..
+
+# 进去测试包（目的：将测试包和核心包隔离）
 cd examples/app
 
 # 本地文件拷贝shell
